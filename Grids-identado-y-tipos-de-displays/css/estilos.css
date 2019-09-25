@@ -12,6 +12,7 @@ body
     grid-template-rows: 300px 25%; 
     agregar filas / columas*/
     grid-template:300px 100px 100px/ 50% 200px 100px;
+    
 }
 
 .item
