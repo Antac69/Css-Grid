@@ -1,0 +1,18 @@
+body
+{
+    font-family: Arial;
+}
+
+.container
+{
+    display: grid;
+    /* agregar numero de columnas */
+    grid-template-columns: 25% 200px 25%;
+}
+
+.item
+{
+    background-color: lightblue;
+    padding: 10px;
+    border: 1px solid red;
+}
