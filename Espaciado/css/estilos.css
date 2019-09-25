@@ -1,0 +1,44 @@
+body
+{
+    font-family: Arial;
+}
+
+.container
+{
+    display: grid;
+    /* agregar numero de columnas
+    grid-template-columns: 25% 200px 25%;
+    agregando filas 
+    grid-template-rows: 300px 25%; 
+    agregar filas / columas*/
+    grid-template:300px 100px 100px/ 50% 200px 100px;
+    /* dar espaciado */
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+    /* grid-gap: fila/columnas; */
+    grid-gap: 10px 100px;
+}
+
+.item
+{
+    background-color: lightblue;
+    padding: 10px;
+    border: 1px solid red;
+    /* margin-right: 10px;
+    margin-bottom: 10px; */
+}
+
+.item:nth-of-type(4)
+{
+    background: blue;
+   /*  greando scrool */
+   overflow: auto;
+   /* display: subgrid; */
+   display: grid;
+   /* grid-template: inherit; */
+   grid-template: 50px 50px 50px/ 200px  200px 200px;
+}
+.item .item
+{
+    background: yellow;
+}
