@@ -4,12 +4,19 @@ body
     font-family: Arial;
 }
 
+.post-list
+{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(100px,293px));
+    justify-content: center;
+    grid-gap: 28px;
+}
+
 .post
 {
     /* aparece la mano de seleccion */
     cursor: pointer;
     position: relative;
-    width: 293px;
     display: block;
 }
 
@@ -44,11 +51,19 @@ body
     display: flex;
 }
 
-.post-likes,.post-coments
+.post-likes,.post-comments
 {
     width:80px;
     margin: 5px;
     font-weight: bold;
     text-align: center;
     display: inline-block;
+}
+
+@media screen and (max-width: 768px)
+{
+    .post-list
+    {
+        grid-gap: 3px;
+    }
 }
