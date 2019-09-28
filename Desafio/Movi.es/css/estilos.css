@@ -48,7 +48,7 @@ body
 {
     /* width: 100vw; */
     /* height: 2em; */
-    background: grey;
+    background: rgb(238, 238, 238);
     grid-area: header;
 }
 
@@ -85,13 +85,14 @@ figure.logo
 .barra-busqueda input
 {
     
-    min-width: 400px;
+    min-width: 420px;
     max-width: 30em;
     width: 100%;
     padding: .5em;
     border-radius: 5px;
     border: 1px solid grey;
     box-sizing: border-box;
+    font: inherit;
     
 }
 
@@ -175,6 +176,7 @@ figure.logo
     grid-area: peliculas;
     height: 100%;
     width: 100%;
+    overflow: auto;
 }
 .estreno-sec1
 {
@@ -219,7 +221,9 @@ figure.logo
     position: relative;
     width: 400px;
     display: block;
-}
+    -webkit-box-shadow: 10px -1px 30px -12px rgba(0,0,0,0.6);
+    -moz-box-shadow: 10px -1px 30px -12px rgba(0,0,0,0.6);
+    box-shadow: 10px -1px 30px -12px rgba(0,0,0,0.6)}
 .baner-peli figure
 {
     margin: 0;
@@ -239,9 +243,6 @@ figure.logo
     bottom: 0;
     width: inherit;
     color: white;
-    -webkit-box-shadow: 2px 17px 60px 5px rgba(0,0,0,0.21);
-    -moz-box-shadow: 2px 17px 60px 5px rgba(0,0,0,0.21);
-    box-shadow: 2px 17px 60px 5px rgba(0,0,0,0.21);
 }
 
 .resumen-peli h2
