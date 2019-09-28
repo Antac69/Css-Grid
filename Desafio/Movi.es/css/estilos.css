@@ -4,6 +4,21 @@ body
     font-family: Arial;
 }
 
+.container-body
+{
+    display: grid;
+    grid-template-rows: 60px 1fr;
+    grid-template-columns: 6em auto 1fr;
+    grid-template-areas: "header header header"
+                         "barra-nav peliculas peliculas";
+    height: 100vh;
+}
+
+.body
+{
+    /* border: 3px solid red; */
+}
+
 /* css header */
 
 .container-header
@@ -16,16 +31,14 @@ body
 .item
 {
     align-self: center;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
-.item:nth-of-type(2)
-{
 
-}
 .item:nth-of-type(3)
 {
     justify-self: flex-end;
 }
+
 .item:nth-of-type(4)
 {
     justify-self: flex-end;
@@ -34,8 +47,9 @@ body
 .header
 {
     /* width: 100vw; */
-    background: grey;
     /* height: 2em; */
+    background: grey;
+    grid-area: header;
 }
 
 .header h1,h2
@@ -60,7 +74,7 @@ figure.logo
     border-radius: 50%;
     /* border: 1px solid red; */
     background-color: white;
-    max-width: .2em;
+    max-width: 0;
     width: 100%;
     padding: 1.45em;
     background-image: url(../imagenes/perfil.jpg);
@@ -83,11 +97,53 @@ figure.logo
 
 /* css barra de navegacion */
 
+.container-nav
+{
+    display: grid;
+    grid-template: 1em 6em 6em 6em 1fr 1em / 6em;
+    grid-template-areas: "."
+                         "home"
+                         "trending"
+                         "likes"
+                         "ajustes"
+                         ".";
+    height: inherit;
+    background: rgb(245, 107, 107);
+    grid-gap: 10px;
+}
+
+.nav:nth-of-type(1)
+{
+    grid-area: home;
+}
+.nav:nth-of-type(2)
+{
+    grid-area: trending;
+}
+.nav:nth-of-type(3)
+{
+    grid-area: likes;
+}
+.nav:nth-of-type(4)
+{
+    grid-area: ajustes;
+    align-self: flex-end;
+}
+
+.nav 
+{
+    /* border: 1px solid blue; */
+}
+
 .barra-nav
 {
-    background: rgb(245, 107, 107);
+   /*  background: rgb(245, 107, 107); */
+    /* width: 6em; */
     color: white;
     text-align: center;
+    display: inline-block;
+    height: 100%;
+    grid-area: barra-nav;
 }
 
 .barra-nav figure, h3
@@ -113,6 +169,50 @@ figure.logo
 }
 
 /* css peliculas */
+
+.peliculas
+{
+    grid-area: peliculas;
+    height: 100%;
+    width: 100%;
+}
+.estreno-sec1
+{
+    display: grid;
+    grid-template: repeat(2,auto)/ auto;
+    /* border: 1px solid blue; */
+    grid-template-areas: "titulo"
+                         "baner";
+}
+
+.sec1 
+{
+    /* border: 1px solid blue; */
+}
+
+.baner-sub1
+{
+    grid-area: baner;
+    display: grid;
+    grid-template-rows: .5fr;
+    grid-template-columns: repeat(100,auto);
+    overflow: auto; 
+    grid-gap: 50px;
+    padding: 20px;
+}
+
+.sub1 
+{
+    /* border: 1px solid blue; */
+}
+
+.titulo-estreno
+{
+    grid-area: titulo;
+    font-size: 1.1em;
+    padding-top: 20px;
+    padding-left: 20px;
+}
 
 .baner-peli
 {
