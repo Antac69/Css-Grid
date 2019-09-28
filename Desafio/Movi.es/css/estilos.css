@@ -1,57 +1,157 @@
 body
 {
     margin: 0;
+    font-family: Arial;
 }
 
-.barra-nav
-{
-    background: rgb(245, 107, 107);
-    display: grid;
-    grid-template-columns: 1 minmax(50px,100px); 
-    grid-template-rows: repeat(4,minmax(50px,100px)) ;
-    /* height: 100vh; */
-    width: 10vw;
-}
+/* css header */
 
-.nav
-{
-    border: 1px solid black;
-}
-
-.header
-{
-    border-bottom: grey;
-    width: 100%;
-    background: grey;
-    height: 90px;
-}
-.logo img
-{
-    position: absolute;;
-    max-width: 50px;
-    width: 100%;
-}
-
-figure.logo
-{
-    margin: 0;
-}
-
-.container
+.container-header
 {
     display: grid;
-    grid-template-columns:50px 120px minmax(200px,1fr) 100px 90px;
-    width: 100vw;
+    grid-template-columns: 50px 130px minmax(400px,.9fr) 200px 50px 30px;
+    justify-content: center;
 }
 
 .item
 {
-    border: 1px solid black;
-    justify-content: center;
-    align-content: center;
+    align-self: center;
+    border: 1px solid blue;
+}
+.item:nth-of-type(2)
+{
+
+}
+.item:nth-of-type(3)
+{
+    justify-self: flex-end;
+}
+.item:nth-of-type(4)
+{
+    justify-self: flex-end;
 }
 
-.item.icon
+.header
 {
-    align-self: center;
+    /* width: 100vw; */
+    background: grey;
+    /* height: 2em; */
+}
+
+.header h1,h2
+{
+    margin: 0;
+}
+
+.logo img
+{
+    max-width: 50px;
+    width: 100%;
+    padding: auto;
+}
+
+figure.logo 
+{
+    margin: 0;
+}
+
+.perfil
+{
+    border-radius: 50%;
+    /* border: 1px solid red; */
+    background-color: white;
+    max-width: .2em;
+    width: 100%;
+    padding: 1.45em;
+    background-image: url(../imagenes/perfil.jpg);
+    background-size: 150%;
+    background-position-x: -.4em;
+}
+
+.barra-busqueda input
+{
+    
+    min-width: 400px;
+    max-width: 30em;
+    width: 100%;
+    padding: .5em;
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-sizing: border-box;
+    
+}
+
+/* css barra de navegacion */
+
+.barra-nav
+{
+    background: rgb(245, 107, 107);
+    color: white;
+    text-align: center;
+}
+
+.barra-nav figure, h3
+{
+    margin: 0;
+}
+
+.home img
+{
+    max-width: 3.4em;
+}
+.trending img
+{
+    max-width: 3.4em;
+}
+.likes img
+{
+    max-width: 3.4em;
+}
+.ajustes img
+{
+    max-width: 3.4em;
+}
+
+/* css peliculas */
+
+.baner-peli
+{
+    position: relative;
+    width: 400px;
+    display: block;
+}
+.baner-peli figure
+{
+    margin: 0;
+}
+
+.baner img
+{
+    max-width: 400px;
+}
+
+.resumen-peli
+{
+    background: rgba(248, 99, 99, 0.705);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: inherit;
+    color: white;
+    -webkit-box-shadow: 2px 17px 60px 5px rgba(0,0,0,0.21);
+    -moz-box-shadow: 2px 17px 60px 5px rgba(0,0,0,0.21);
+    box-shadow: 2px 17px 60px 5px rgba(0,0,0,0.21);
+}
+
+.resumen-peli h2
+{
+    margin: .3em;
+}
+
+.resumen-peli p
+{
+    margin: .6em;
+    margin-top: 0;
+    text-align: justify;
 }
