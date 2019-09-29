@@ -225,7 +225,7 @@ figure.logo
     grid-area: peliculas;
     height: 100%;
     width: 100%;
-    overflow: auto;
+    overflow: scroll;
 }
 .estreno-sec1
 {
