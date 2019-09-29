@@ -1,16 +1,16 @@
 body
 {
     margin: 0;
-    font-family: Arial;
+    font-family: 'Lato', sans-serif;
 }
 
 .container-body
 {
     display: grid;
     grid-template-rows: 60px 1fr;
-    grid-template-columns: 6em auto 1fr;
-    grid-template-areas: "header header header"
-                         "barra-nav peliculas peliculas";
+    grid-template-columns: 6em 1fr;
+    grid-template-areas: "header header"
+                         "barra-nav peliculas";
     height: 100vh;
 }
 
@@ -24,8 +24,35 @@ body
 .container-header
 {
     display: grid;
-    grid-template-columns: 50px 130px minmax(400px,.9fr) 200px 50px 30px;
+    grid-template-columns: auto minmax(100px,.9fr) auto;
     justify-content: center;
+    height: 100%;
+    grid-gap: 10px;
+}
+
+.contenedor-logo
+{
+    display: grid;
+    grid-template-columns: 50px auto;
+}
+
+.info-perfil
+{
+    display: grid;
+    grid-template-columns: 130px auto;
+}
+
+.item-log
+{
+    /* border: 1px solid red; */
+    align-self: center;
+}
+
+.item-per
+{
+    /* border: 1px solid red; */
+    align-self: center;
+    justify-self: flex-end;
 }
 
 .item
@@ -34,15 +61,19 @@ body
     /* border: 1px solid blue; */
 }
 
-.item:nth-of-type(3)
+.item:nth-of-type(1)
 {
     justify-self: flex-end;
 }
 
-.item:nth-of-type(4)
+/* .item:nth-of-type(4)
 {
     justify-self: flex-end;
 }
+.item:nth-of-type(5)
+{
+    align-self: center;
+} */
 
 .header
 {
@@ -52,8 +83,16 @@ body
     grid-area: header;
 }
 
-.header h1,h2
+.header h2
 {
+    font-size: 1.3em;
+    margin: 0;
+}
+
+h1.titulo-pag
+{
+    -webkit-text-stroke: 1.2px red ;
+    color: transparent;
     margin: 0;
 }
 
@@ -109,8 +148,14 @@ figure.logo
                          "ajustes"
                          ".";
     height: inherit;
-    background: rgb(245, 107, 107);
+    background-image: linear-gradient(to right, #fe555c, #fe5c60, #ff6364, #ff6a68, #ff706c);
     grid-gap: 10px;
+}
+
+.container-nav a
+{
+    text-decoration: none;
+    color: inherit;
 }
 
 .nav:nth-of-type(1)
@@ -154,19 +199,23 @@ figure.logo
 
 .home img
 {
-    max-width: 3.4em;
+    max-width: 2.3em;
+    width: 100%;
 }
 .trending img
 {
-    max-width: 3.4em;
+    max-width: 2.3em;
+    width: 100%;
 }
 .likes img
 {
-    max-width: 3.4em;
+    max-width: 2.3em;
+    width: 100%;
 }
 .ajustes img
 {
-    max-width: 3.4em;
+    max-width: 2.3em;
+    width: 100%;
 }
 
 /* css peliculas */
@@ -216,6 +265,11 @@ figure.logo
     padding-left: 20px;
 }
 
+.titulo-estreno h2
+{
+    margin: 0;
+}
+
 .baner-peli
 {
     position: relative;
@@ -255,4 +309,71 @@ figure.logo
     margin: .6em;
     margin-top: 0;
     text-align: justify;
+}
+
+/* media queris */
+@media screen and (max-width:1024px)
+{
+    /* media header */
+    .container-header
+    {
+        width: 100vw;
+    }
+    .barra-busqueda input 
+    {
+        min-width: 100%;
+    }
+    .item:nth-of-type(1) {
+        justify-self: initial;
+    }
+}
+@media screen and (max-width: 768px)
+{
+    .header,.barra-nav
+    {
+        width: 100vw;
+    }
+    .container-body
+    {
+        grid-template-rows: 60px 1fr 6em;
+        grid-template-columns: auto;
+        grid-template-areas: "header"
+                         "peliculas" 
+                         "barra-nav";
+    }
+
+    /* media barra de navegacion */
+
+    .container-nav
+    {
+        grid-template: 6em / repeat(4,1fr) ;
+        grid-template-areas: "home trending likes ajustes";
+        justify-content: space-evenly;
+    }
+    .nav
+    {
+        align-self: center;
+    }
+    .nav:nth-of-type(4)
+    {
+        align-self: center;
+    }
+    
+}
+
+@media screen and (max-width: 480px)
+{
+    /* media header */
+    .container-header
+    {
+        justify-content:space-evenly;
+        grid-gap: initial;
+    }
+    .info-perfil
+    {
+        grid-template-columns: auto;
+    }
+    .item-per:nth-of-type(1) {
+        display: none;
+    }
 }
