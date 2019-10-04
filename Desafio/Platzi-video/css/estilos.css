@@ -1,0 +1,17 @@
+body
+{
+    margin: 0;
+}
+
+.body-container
+{
+    display: grid;
+    grid-template-columns: 20em 1fr; 
+    height: 100vh;
+}
+
+.header-barra
+{
+    background: rgb(4, 4, 65);
+    color: white;
+}
