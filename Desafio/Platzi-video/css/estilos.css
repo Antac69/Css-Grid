@@ -31,6 +31,8 @@ a
     background: rgb(21, 27, 49);
     color: white;
     grid-area: header-barra;
+    height: 100vh;
+    overflow: auto;
 }
 .header-barra h1,h2,h3
 {
@@ -69,8 +71,7 @@ a
 
 .video-tex
 {
-    background-image: linear-gradient(to right, #fe555c, #ff5e86, #ff6eaf, #ff83d4, #f099f4);
-    -webkit-background-clip: text;
+    background-image: linear-gradient(to right, #fd3138, #fa4774, #fb539f, #ff83d4, #f099f4);-webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -175,6 +176,8 @@ a
 .browse
 {
     grid-area: browse;
+    height: 100vh;
+    overflow: auto;
 }
 
 .container-browse
@@ -182,7 +185,7 @@ a
     display: grid;
     grid-template-rows: minmax(315px,500px) auto 1fr;
     grid-template-columns: minmax(562px,1fr);
-    height: 100vh;
+    height: 100%;
 }
 
 .item-b
@@ -190,8 +193,125 @@ a
     border: 1px solid red;
 }
 
+    /* Parte del video */
+
 .video iframe
 {
     width: 100%;
     height: 100%;
 }
+
+    /* Informacion del video */
+
+.informacion-video
+{
+    display: grid;
+    grid-template-columns:auto 1fr;
+}
+
+.item-iv
+{
+    border: 1px solid red;
+    align-self:flex-end; 
+    padding: 1em;
+}
+
+.vistas
+{
+    color: rgb(161, 161, 161);
+}
+
+.container-botones
+{
+    padding-top: 1em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container-botones button
+{
+    font-family: inherit;
+}
+
+.lista 
+{
+    background-image: linear-gradient(to right, #fd3138, #fa4774, #fb539f, #ff83d4, #f099f4);
+    color: white;
+    border: 0px solid;
+    border-radius: 15px;
+    padding: .5em;
+    outline: none;
+    cursor: pointer;
+}
+
+.compartir
+{
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    max-height: 23px;
+    max-width: 60px;
+    padding: 0;
+    position: relative;
+    bottom: .4em;
+}
+.compartir img
+{
+    max-width: 15px;
+    opacity: 0.55;
+}
+
+.guardar
+{
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    max-height: 23px;
+    max-width: 60px;
+    padding: 0;
+    position: relative;
+    bottom: .7em;
+}
+
+.guardar img
+{
+    max-width: 20px;
+    opacity: 0.55;
+}
+
+.container-categoria button
+{
+    font-family: inherit;
+    color: white;
+    border: 0px solid;
+    border-radius: 15px;
+    padding-top: .1em;
+    padding-bottom: .1em;
+    min-width: 60px;
+    outline: none;
+    cursor: pointer;
+}
+
+.boton-1
+{
+    background: #9b54f2;
+}
+
+.boton-2
+{
+    background: #10eebf;
+}
+
+.boton-3
+{
+    background: #e01622;
+}
+
+.boton-4
+{
+    background: #ed3084;
+}
+
+
