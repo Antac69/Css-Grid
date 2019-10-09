@@ -183,8 +183,11 @@ a
 .container-browse
 {
     display: grid;
-    grid-template-rows: 700px auto 1fr;
-    grid-template-columns: minmax(562px,1fr);
+    grid-template-rows: 60% auto 1fr;
+    grid-template-columns: minmax(562px,1fr) minmax(400px,400px);
+    grid-template-areas: "video sugerencias"
+                          "info-video sugerencias"
+                          "comentarios sugerencias";
     height: 100%;
 }
 
@@ -194,6 +197,10 @@ a
 }
 
     /* Parte del video */
+.video
+{
+    grid-area: video;
+}
 
 .video iframe
 {
@@ -207,7 +214,9 @@ a
 {
     display: grid;
     grid-template-columns:auto 1fr;
-    border-bottom: 2px solid rgb(206, 206, 206); 
+    border-bottom: 2px solid rgb(206, 206, 206);
+    grid-area: info-video; 
+    grid-template-areas: "titulo-vistas categorias";
 }
 
 .item-iv
@@ -217,6 +226,15 @@ a
     padding: 1em;
 }
 
+.container-informacion
+{
+    grid-area: titulo-vistas;
+}
+
+.container-categoria
+{
+    grid-area: categorias;
+}
 .vistas
 {
     color: rgb(161, 161, 161);
@@ -317,10 +335,11 @@ a
 
 /* comentarios-sugerencias */
 
-.comentarios-sugerencias
+.comentarios
 {
     display: grid;
-    grid-template-columns: minmax(20em,32em) 560px;
+    grid-template-columns: minmax(20em,32em);
+    grid-area: comentarios;
 }
 
 .item-cs
@@ -346,7 +365,7 @@ a
 {
     display: grid;
     grid-template-rows: 1.5em;
-    grid-auto-rows: 360px;
+    grid-auto-rows: auto;
     row-gap: 1em;
 }
 .item-csuge
@@ -441,9 +460,156 @@ a
 
 /* Sugerencias */
 
+.sugerencia
+{
+    grid-area: sugerencias;
+    overflow: auto;
+}
+
 .container-sugerencia
 {
-    /* display: grid;
-    grid-template-rows: 316px 1em;
-    grid-template-columns: 560px;  */
+    display: grid;
+    grid-template-rows: auto auto;
+}
+
+.video-sug
+{
+    width: 100%;
+    height: 216px;
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src:  url('../fonts/icomoon.eot?rvphlo');
+    src:  url('../fonts/icomoon.eot?rvphlo#iefix') format('embedded-opentype'),
+      url('../fonts/icomoon.ttf?rvphlo') format('truetype'),
+      url('../fonts/icomoon.woff?rvphlo') format('woff'),
+      url('../fonts/icomoon.svg?rvphlo#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+  
+  [class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+  
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .icon-menu:before {
+    content: "\e9bd";
+  }
+  
+  .burger-button
+  {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .5);
+    display: none;
+    line-height: 40px;
+    text-align: center;
+    position: fixed;
+    z-index: 5;
+    left: 5px;
+    top: 5px;
+    color: white;
+  }
+
+@media screen and (max-width: 1360px)
+{
+    .informacion-video
+    {
+        grid-template-columns:auto;
+        grid-template-rows:auto auto;
+        grid-template-areas: "titulo-vistas" 
+                             "categorias";
+    }
+}
+
+@media screen and (max-width: 1360px)
+{
+    .container-browse
+    {
+        grid-template-columns: auto;
+        grid-template-areas: "video video"
+                          "info-video info-video"
+                          "comentarios sugerencias";
+    }
+}
+
+@media screen and (max-width: 1024px)
+{
+    .header-barra
+    {
+        overflow: auto;
+    }
+    .video-sug
+    {
+        height: 125px;
+    }
+}
+
+@media screen and (max-width: 768px)
+{
+    .container-browse
+    {
+        grid-template-rows: 50% auto 1fr;
+        grid-template-columns: auto;
+        grid-template-areas: "video"
+                          "info-video"
+                          "sugerencias"
+                          "comentarios";
+    }
+
+    .video-sug
+    {
+        height: 216px;
+    }
+    .body-container
+    {
+        grid-template-areas: "browse browse";
+    }
+    .header-barra
+    {
+        position: absolute;
+        left: -18em;
+        width: 18em;
+        background: rgba(21, 27, 49,.95);
+    }
+    .burger-button
+    {
+        display: initial;
+    }
+    .item.header-barra.is-active
+    {
+        left: 0;
+    }
+    .container-sugerencia
+    {
+        grid-template-columns: 400px;
+    }
+
+@media screen and (max-width: 480px)
+{
+    .container-sugerencia
+    {
+        grid-template-columns: auto;
+    }
+}
+@media screen and (max-width: 320px)
+{
+    .video-sug
+    {
+        height: 154px;
+    }
 }
