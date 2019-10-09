@@ -9,6 +9,7 @@
     <title>PlatziVideo</title>
 </head>
 <body class="body-container">
+    <i class="icon-menu burger-button" id="burger-menu"></i>
     <section class="item header-barra">
         <div class="container-header-barra">
             <!-- <img src="imagenes/platzivideo_d9a3900a-39c4-49d9-b2b9-62e02452f2f9.jpg" alt=""> -->
@@ -156,7 +157,7 @@
                     </button>
                 </div>
             </article>
-            <article class="item-b comentarios-sugerencias">
+            <article class="item-b comentarios">
                 <div class="item-cs container-comentarios">
                     <h4 class="item-ccoment titulo-comentarios">
                         Comentarios
@@ -170,7 +171,7 @@
                         <h4 class="item-coment nombre-perfil">
                             Gordon Carroll
                         </h4>
-                        <p class="item.coment comentario">
+                        <p class="item-coment comentario">
                             Barbecue Sauce For A Perfect Barbeque
                         </p>
                     </div>
@@ -179,7 +180,7 @@
                         <h4 class="item-coment nombre-perfil">
                             Gordon Carroll
                         </h4>
-                        <p class="item.coment comentario">
+                        <p class="item-coment comentario">
                             Why Las VEgas Hotel Rooms For You
                         </p>
                     </div>
@@ -188,7 +189,7 @@
                         <h4 class="item-coment nombre-perfil">
                             Gordon Carroll
                         </h4>
-                        <p class="item.coment comentario">
+                        <p class="item-coment comentario">
                             What You Need To Know About Oil Fondue
                         </p>
                     </div>
@@ -197,7 +198,7 @@
                         <h4 class="item-coment nombre-perfil">
                             Gordon Carroll
                         </h4>
-                        <p class="item.coment comentario">
+                        <p class="item-coment comentario">
                             Popular Uses Of The Internet
                         </p>
                     </div>
@@ -206,30 +207,87 @@
                         <h4 class="item-coment nombre-perfil">
                             Gordon Carroll
                         </h4>
-                        <p class="item.coment comentario">
+                        <p class="item-coment comentario">
                             Are You Ready To Buy A Home Theater Audio System
                         </p>
                     </div>
                 </div>
+            </article>
+            <article class="item-b sugerencias">
                 <div class="item-cs container-sugerencias">
                     <h4 class="item-csuge titulo-comentarios">
                         Sugerencias
                     </h4>
                     <div class="item-csuge container-sugerencia">
-                        <iframe width="100%" height="80%" src="https://www.youtube.com/embed/EUtMu_kxLmc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <p class="titulo-sugerencia">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/EUtMu_kxLmc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="video-sug" allowfullscreen></iframe>
+                        <h4 class="titulo-sugerencia">
                             Quick And Easy Lunches For The Cooking Challenged
-                        </p>
+                        </h4>
                     </div>
                     <div class="item-csuge container-sugerencia">
-                        <iframe width="100%" height="80%" src="https://www.youtube.com/embed/4eCx03DWIAM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        <p class="titulo-sugerencia">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/4eCx03DWIAM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="video-sug" allowfullscreen></iframe>
+                        <h4 class="titulo-sugerencia">
                             Motos 
-                        </p>
+                        </h4>
+                    </div>
+                    <div class="item-csuge container-sugerencia">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/4eCx03DWIAM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="video-sug" allowfullscreen></iframe>
+                        <h4 class="titulo-sugerencia">
+                            Motos 
+                        </h4>
+                    </div>
+                    <div class="item-csuge container-sugerencia">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/4eCx03DWIAM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="video-sug" allowfullscreen></iframe>
+                        <h4 class="titulo-sugerencia">
+                            Motos 
+                        </h4>
+                    </div>
+                    <div class="item-csuge container-sugerencia">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/4eCx03DWIAM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" class="video-sug" allowfullscreen></iframe>
+                        <h4 class="titulo-sugerencia">
+                            Motos 
+                        </h4>
                     </div>
                 </div>
             </article>
         </div>
     </section>
+    <script>
+            const menu = document.querySelector('.item.header-barra');
+         console.log(menu);
+    
+          const ipad = window.matchMedia('screen and (max-width: 768px)');
+    
+          const buergerButton = document.querySelector('#burger-menu');
+          console.log(buergerButton);
+    
+    
+          ipad.addListener(validation);
+    
+          function validation(event)
+          {
+            if (event.matches)
+            {
+              buergerButton.addEventListener('click',hideShow);
+            }else
+            {
+              buergerButton.removeEventListener('click',hideShow);
+            }
+          }
+    
+          validation(ipad);
+    
+    
+          function hideShow()
+          {
+            if(menu.classList.contains('is-active'))
+            {
+            menu.classList.remove('is-active');
+            }else
+            {
+            menu.classList.add('is-active');
+            }
+          }
+        </script>
 </body>
 </html>
